@@ -1,0 +1,51 @@
+When a class is defined and its object is instantiated, the Python interpreter internally invokes several dunder
+(double underscore) methods in a specific order. Here's the sequence of dunder methods that are called in this process:
+
+1. Class Definition Stage
+    At this stage, Python processes the class definition itself.
+
+a) __new__(cls, name, bases, dct) (of the metaclass):
+
+    This method is called to create the class object itself. By default, Python uses type as the metaclass,
+    so type.__new__ is called.
+    
+    Parameters:
+    cls: The metaclass (usually type).
+    name: The name of the class being defined.
+    bases: A tuple of base classes of the new class.
+    dct: The class body (attributes and methods as a dictionary).
+
+b) __init__(cls, name, bases, dct) (of the metaclass):
+
+    Once the class object is created, the __init__ method of the metaclass initializes it. The default implementation in type
+    typically doesn't do much.
+
+
+
+2. Object Instantiation Stage
+    When you call the class to create an object, the following methods are invoked:
+
+a) __new__(cls, *args, **kwargs) (of the class):
+
+    This method is responsible for creating a new instance of the class. It returns the newly created instance (usually an instance of the class itself, but it can return instances of other classes).
+    
+    Parameters:
+    cls: The class being instantiated.
+    *args and **kwargs: Positional and keyword arguments passed to the constructor.
+
+b) __init__(self, *args, **kwargs) (of the instance):
+
+    After the instance is created by __new__, the __init__ method initializes it. This method is typically where you define the initial state of the object.
+    
+    Parameters:
+    self: The newly created instance.
+    *args and **kwargs: The same arguments passed to __new__.
+
+
+Summary of Order
+1. Class Creation:
+    a) __new__ of the metaclass.
+    b) __init__ of the metaclass.
+2. Object Instantiation:
+    a) __new__ of the class.
+    b) __init__ of the instance.
