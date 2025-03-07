@@ -4,6 +4,7 @@ Patern Name -  Singleton
 Description - whenever we need a single instance of a class whenever we instantiate an object.
 __new__ method is used to create the instance of the class, and is called before the object instance is
 created. 
+1_3_singleton.py style is prefered
 """
 
 

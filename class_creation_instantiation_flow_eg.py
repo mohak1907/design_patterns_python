@@ -16,4 +16,4 @@ class MyClass(metaclass=MyMeta):
         print("MyClass.__init__ called")
 
 # Instantiate the class
-obj = MyClass()
+# obj = MyClass()

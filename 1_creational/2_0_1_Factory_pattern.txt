@@ -1,0 +1,37 @@
+Practical Use of Factory Design Pattern
+    The Factory Design Pattern is a creational design pattern that provides a way to create objects without specifying their concrete class in the client code. Instead of instantiating objects directly using the new keyword, we use a factory method to create instances dynamically.
+
+Practical Uses:
+    1. Encapsulation of Object Creation Logic
+        If the process of creating an object is complex (e.g., involves multiple steps, configurations, or dependencies), a factory method helps encapsulate this logic.
+    
+    2. Promoting Loose Coupling
+        It decouples the client code from the actual implementation of objects, making it easier to swap implementations without modifying the client code.
+    
+    3. Ensuring a Single Point of Object Creation
+        Instead of spreading object creation logic across multiple places in the codebase, a factory centralizes it, making it easier to maintain.
+
+    4. Providing Flexibility in Object Creation
+        The factory method can return different subtypes of a class based on input parameters or runtime conditions.
+
+    5. Useful in Dependency Injection and Testing
+        When writing unit tests, factories allow creating mock objects easily without modifying the client code.
+
+
+When Should We Use Factory Pattern?
+    ✅ Use the Factory Pattern when:
+
+    1. Object Creation Logic is Complex
+        If an object's creation requires setting up multiple dependencies, configuration settings, or conditional logic.
+
+    2. You Need to Return Different Implementations
+        When a superclass defines a common interface but different subclasses implement specific behavior.
+    
+    3. You Want to Adhere to the Open-Closed Principle
+        If you expect frequent modifications in object creation (e.g., adding new types), factories allow extending the system without modifying existing code.
+
+    4. You Want to Reduce Tight Coupling
+        When your code depends on multiple concrete implementations, a factory removes these dependencies and allows swapping components easily.
+
+    5. You Work with Frameworks and Libraries
+        Many frameworks (like Spring in Java, Flask/Django in Python) use the factory pattern for object creation.
