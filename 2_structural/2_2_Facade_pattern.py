@@ -1,6 +1,6 @@
 """
 Facade design pattern:
-It is a structural design pattern which proves and easy interface for complicated classes, functions,
+It is a structural design pattern which provides an easy interface for complicated classes, functions,
 implemented in the code.
 To understand it better, we divide the Process in to three parts:-
 1. Systems - multiple system classes implemented for different purposes
